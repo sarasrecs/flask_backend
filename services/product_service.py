@@ -29,8 +29,8 @@ class ProductService:
     def get_recommendations(
         self,
         query: str,
-        top_k: int = 5,
-        min_reviews: int = 2,
+        top_k: int = 20,
+        min_reviews: int = 1,
         score_threshold: float = 0.3
     ) -> Dict[str, Any]:
         """

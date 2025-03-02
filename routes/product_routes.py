@@ -9,13 +9,14 @@ product_service = ProductService()
 def get_recommendations():
     try:
         data = request.get_json()
+        print('data', data)
         if not data or 'query' not in data:
             return jsonify({
                 'error': 'Query is required'
             }), HTTPStatus.BAD_REQUEST
             
         query = data['query']
-        top_k = data.get('top_k', 5)
+        top_k = data.get('top_k', 20)
         min_reviews = data.get('min_reviews', 1)
         score_threshold = data.get('score_threshold', 0.3)
         

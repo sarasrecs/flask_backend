@@ -20,6 +20,7 @@ function App() {
         },
         body: JSON.stringify({ query }),
       });
+      console.log(query)
 
       if (!response.ok) {
         throw new Error('Failed to fetch recommendations');

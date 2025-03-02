@@ -84,14 +84,14 @@ class ProductRecommender:
     def get_product_recommendations(
         self,
         query: str,
-        top_k: int = 5,
+        top_k: int = 20,
         min_reviews: int = 1,
         score_threshold: float = 0.3
     ) -> Dict[str, Any]:
         """
         Get product recommendations with detailed analysis
         """
-        matches = self.search_reviews(query, top_k=top_k * 4, score_threshold=score_threshold)
+        matches = self.search_reviews(query, top_k=top_k * 2, score_threshold=score_threshold)
         
         # Aggregate results by product
         product_data: Dict[str, Dict[str, Any]] = {}
@@ -177,7 +177,7 @@ def main():
             # Get and format recommendations
             results = recommender.get_product_recommendations(
                 query,
-                top_k=5,
+                top_k=20,
                 min_reviews=2,
                 score_threshold=0.3
             )
