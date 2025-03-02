@@ -55,7 +55,7 @@ class ProductRecommender:
     def __init__(self, index):
         self.index = index
     
-    def search_reviews(self, query: str, top_k: int = 10, score_threshold: float = 0.3) -> List[Dict[str, Any]]:
+    def search_reviews(self, query: str, top_k: int = 10, score_threshold: float = 0.5) -> List[Dict[str, Any]]:
         """
         Search for relevant reviews and return detailed results
         """
@@ -86,7 +86,7 @@ class ProductRecommender:
         query: str,
         top_k: int = 20,
         min_reviews: int = 1,
-        score_threshold: float = 0.3
+        score_threshold: float = 0.5
     ) -> Dict[str, Any]:
         """
         Get product recommendations with detailed analysis
@@ -179,7 +179,7 @@ def main():
                 query,
                 top_k=20,
                 min_reviews=2,
-                score_threshold=0.3
+                score_threshold=0.5
             )
             
             # Print formatted results

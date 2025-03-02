@@ -31,7 +31,7 @@ class ProductService:
         query: str,
         top_k: int = 20,
         min_reviews: int = 1,
-        score_threshold: float = 0.3
+        score_threshold: float = 0.5
     ) -> Dict[str, Any]:
         """
         Get product recommendations based on the query

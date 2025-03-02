@@ -18,7 +18,7 @@ def get_recommendations():
         query = data['query']
         top_k = data.get('top_k', 20)
         min_reviews = data.get('min_reviews', 1)
-        score_threshold = data.get('score_threshold', 0.3)
+        score_threshold = data.get('score_threshold', 0.5)
         
         results = product_service.get_recommendations(
             query=query,
