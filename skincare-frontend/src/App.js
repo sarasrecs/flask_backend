@@ -71,6 +71,15 @@ function App() {
               {results.products.map((product, index) => (
                 <div key={index} className="product-card">
                   <h3>{product.name}</h3>
+                  <img 
+                    src={(() => {
+                      const urlObj = new URL(product.url);
+                      const skuId = urlObj.searchParams.get("skuId");
+                      return skuId ? `https://sephora.com/productimages/sku/s${skuId}-main-zoom.jpg?imwidth=315` : product.url; 
+                    })()}
+                    alt={product.name} 
+                    className="product-image" 
+                  />
                   <div className="product-stats">
                     <span>Confidence: {product.confidence_score}</span>
                     <span>Reviews: {product.review_count}</span>
